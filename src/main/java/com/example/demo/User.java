@@ -1,6 +1,7 @@
 package com.example.demo;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -19,6 +20,17 @@ public class User {
         this.email = email;
     }
 
+    static User findUserById(Long id){
+        Iterator<User> iterator = getUserList().iterator();
+        while(iterator.hasNext()){
+            User temp = iterator.next();
+            if(temp.getId()==id){
+                return temp;
+            }
+        }
+        return null;
+    }
+
     public long getId() {
         return id;
     }
@@ -29,6 +41,14 @@ public class User {
 
     public String getEmail() {
         return email;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public static List<User> getUserList() {
