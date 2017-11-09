@@ -34,8 +34,8 @@
         <input type="hidden" name="id" th:value="${user.id}"/>
 -->
         <td>
-            <form th:action="${request.contextPath} + '/user/edit'" method="post" style="float: left;padding: 5px;"> <button type="submit" name="id" th:value="${userRow.id}" class="btn btn-dark"> Edit </button></form>
-            <form th:action="${request.contextPath} + '/user/delete'" method="post" style="float: left;padding: 5px;"> <button type="submit" name="id" th:value="${userRow.id}" class="btn btn-dark"> delete </button></form>
+            <form th:action="@{/user/edit}" method="post" style="float: left;padding: 5px;"> <button type="submit" name="id" th:value="${userRow.id}" class="btn btn-dark"> Edit </button></form>
+            <form th:action="@{/user/delete}" method="post" style="float: left;padding: 5px;"> <button type="submit" name="id" th:value="${userRow.id}" class="btn btn-dark"> delete </button></form>
         </td>
         <!--<td th:text="${#calendars.format(task.dueTo)}">July 11, 2012 2:17:16 PM CDT</td>-->
 
@@ -44,7 +44,7 @@
     </tbody>
 </table>
 
-<a href="/">
+<a th:href="@{/}">
     <button type="button" class="btn btn-dark" >Go Back</button>
 </a>
 
